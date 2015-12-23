@@ -1,0 +1,74 @@
+html(lang='en')
+    head
+        meta(charset="utf-8")
+        title 一英里_留学_搜索
+        link(rel='stylesheet', href='css/search.css')
+        script(src="js/angular.js")
+        script(src="js/jquery.js")
+        script(src="js/search.js")
+    body(ng-app="searchApp")
+        .container(ng-controller="searchCon")
+            .header
+                .left
+                    .logo
+                        img(alt="图片出错啦" src="http://image.1yingli.cn/img/logo_white.png")
+                    .search
+                        input(placeholder="搜索：学校 / 专业 / 导师" ng-model="scopeTest" ng-keyup="isSearchWord=true; load();")
+                        img(src="http://image.1yingli.cn/img/search_white.png")
+                .right
+                    ul.userStatus
+                        li.teacherTo 成为导师
+                        li.userLogin  晓乐&feng
+                        li.themeChoose 主题分类
+            .content
+                .content_top
+                    .theme_choose
+                        ul
+                           li(ng-class="{'choose-tips': tips==themes[0],}" ng-click="isSearchWord=false;tips=themes[0]; load();") 全部
+                                li(ng-class="{'choose-tips': tips==themes[1],}" ng-click="isSearchWord=false;tips=themes[1]; load();"){{themes[1]}}
+                                li(ng-class="{'choose-tips': tips==themes[2],}" ng-click="isSearchWord=false;tips=themes[2]; load();"){{themes[2]}}
+                                li(ng-class="{'choose-tips': tips==themes[3],}" ng-click="isSearchWord=false;tips=themes[3]; load();"){{themes[3]}}
+                                li(ng-class="{'choose-tips': tips==themes[4],}" ng-click="isSearchWord=false;tips=themes[4]; load();"){{themes[4]}}
+                                li(ng-class="{'choose-tips': tips==themes[5],}" ng-click="isSearchWord=false;tips=themes[5]; load();"){{themes[5]}}
+                    .tip_choose
+                        .tips_for_choose
+                            img(src="http://image.1yingli.cn/img/good.png")
+                            label 特色标签
+                            select(ng-options="item.label for item in countrys track by item.value" ng-model="selectCountry" ng-change="isSearchWord=true;word=selectCountry.value+','+selectDegree.value+','+ selectProfessional.value +','+ selectLike.value;load();")
+                            select(ng-options="item.label for item in degrees track by item.value" ng-model="selectDegree" ng-change="isSearchWord=true;word=selectCountry.value+','+selectDegree.value+','+ selectProfessional.value +','+ selectLike.value;load();")
+                            select(ng-options="item.label for item in professionals track by item.value" ng-model="selectProfessional" ng-change="isSearchWord=true;word=selectCountry.value+','+selectDegree.value+','+ selectProfessional.value +','+ selectLike.value;load();")
+                            select(ng-options="item.label for item in likes track by item.value" ng-model="selectLike" ng-change="isSearchWord=true;word=selectCountry.value+','+selectDegree.value+','+ selectProfessional.value +','+ selectLike.value;load();")
+                        .tips_choosed
+                            img(src="http://image.1yingli.cn/img/choose.png")
+                            label 已选标枪
+                .content_main
+                    .main_search_sort(ng-cloak)
+                        ul
+                            li 综合
+                            li 喜爱
+                            li 价格
+                            li
+                                input(placeholder="搜索：学校 / 专业 / 导师" ng-model="word" ng-keyup="isSearchWord=true; load();")
+                                img(src="http://image.1yingli.cn/img/search_icon.png")
+                    .main_block(ng-repeat="person in persons")
+                        .one_block(ng-style="{color:'#000'}")
+                            .block_left
+                                img(ng-src="{{person.iconurl}}")
+                            .block_middle
+                                p(ng-bind-html="person.servicetitle | to_trusted")
+                                p
+                                    label(ng-bind="person.name")
+                                    label(ng-bind-html="person.simpleinfo | to_trusted")
+                                p(ng-bind-html="person.introduce | to_trusted")
+                            .block_right
+                                p(ng-if="person.serviceprice.length>0") {{person.serviceprice}}/1小时
+                                p
+                                    img(src="http://image.1yingli.cn/img/heart.png")
+                                    label {{person.likeno}}人想见
+                                p 本周可咨询{{person.timeperweek}}次
+                    .page(ng-show="totalPage >= 1")
+                        img(src="images/page_person.png" ng-click="loadPage(1);")
+                        label(ng-repeat="page in pages track by $index" ng-class="{'pageNow':currentPage==page,'pageOverplus':'......'==page}" ng-bind="page" ng-click="loadPage(page)")
+                        img(src="http://image.1yingli.cn/img/nextPageBlue.png" ng-click="next();")
+                        label 英里
+            .footer

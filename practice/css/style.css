@@ -1,0 +1,125 @@
+html{color:#000;background:#FFF;font-family: "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Helvetica,sans-serif;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,
+fieldset,input,textarea,p,blockquote,th,td {
+    margin:0;
+    padding:0;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+fieldset,img {
+    border:0;
+}
+
+address,caption,cite,code,dfn,em,strong,th,var {
+    font-style:normal;
+    font-weight:normal;
+}
+
+ol,ul {
+    list-style:none;
+}
+
+caption,th {
+    text-align:left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size:100%;
+    font-weight:normal;
+}
+
+q:before,q:after {
+    content:'';
+}
+
+abbr,acronym { border:0;
+}
+
+@font-face{
+    font-family: "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Helvetica,sans-serif;
+}
+
+@font-face{
+    font-family: "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Helvetica,sans-serif;
+
+}
+
+input{
+	outline:none;
+}
+<!--------------------footer---------------------->
+	
+
+<!------------------------------header------------------------------->
+#navbar {
+	background: #34495C;
+}
+#header-right {
+    width: 450px;
+    height: 60px;
+    line-height: 60px;
+    float: right;
+}
+#logo {
+	margin-top: -7px;
+	width: 113px;
+	height:45px;	
+}
+#search-box {
+    float: left;
+    line-height: 60px;
+	width: 305px;
+}
+.navbar-header input{
+	padding-left: 7px;
+	border-radius: 8px;
+	width: 250px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid rgba(0,0,0,0.3);
+    font-family: "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    float: left;
+    margin-top: 16px;
+}
+#search-img {
+	cursor: pointer;
+	margin-left: -5px;
+	background-image: url(http://image.1yingli.cn/img/search_white.png);
+	background-repeat: no-repeat;
+    background-size: 40px, 30px;
+    background-position: 6px;
+	cursor: pointer;
+    float: left;
+    width: 40px;
+    height: 33px;
+    margin-top: 12px;
+}
+
+.navbar-default .navbar-nav>li>a {
+	font-family: "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Helvetica,sans-serif;
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+    color: #56bbe8;
+}
+
+.header_spite {
+    padding: 10px 0px;
+}
+
+.dropdown-menu {
+	min-width: 0px;
+}
+.navbar-default .navbar-toggle {
+    border-color: #FFF;
+	margin-top: 15px;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFF;
+}

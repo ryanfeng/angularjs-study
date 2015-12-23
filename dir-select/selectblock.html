@@ -1,0 +1,14 @@
+<div class="m-select" ng-mouseleave="isShowCountry=false;">
+	<div class="u-select" ng-click="isShowCountry = !isShowCountry;">
+	  <img id="select-country" ng-src="{{country.flag}}" />
+	  <label id="phoneCode">{{country.code}}</label>
+	  <img id="select-sub" src="http://image.1yingli.cn/img/new/select-arrow1.png"></img>
+	  <span id="select-splie"></span>
+	</div>  
+	<ul class="u-select-ul" ng-show="isShowCountry">
+	  	<li class="u-select-li" ng-click="selectCountry($index);" ng-repeat="country in countrys">
+	     	<img class="select-country" ng-src="{{country.flag}}"></img>
+	     	<label>{{country.code}}</label>
+	    </li>
+	</ul>     
+</div> 

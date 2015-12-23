@@ -1,0 +1,23 @@
+{
+  "name": "bower.json",
+  "authors": [
+    "ryan <503775540@qq.com>"
+  ],
+  "description": "jquery",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.7",
+    "angular": "~1.4.7"
+    "bootstrap": "~3.0.0"
+  }
+}

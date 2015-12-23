@@ -1,0 +1,111 @@
+<div class="person-background">
+    <img ng-src="{{(person.bgUrl)?person.bgUrl:'http://image.1yingli.cn/img/person_bg.png'}}">
+</div>
+<div class="contrain" ng-controller="personInfoCon">
+    <div class="contrain-left">
+        <div class="left-header">
+            <img class="person-img" ng-src="{{person.iconUrl}}">
+            <span class="person-name">{{person.name}}</span>
+            <span class="person-simpleinfo">{{person.simpleinfo}}</span>
+            <img class="person-likeimg" src="http://image.1yingli.cn/img/heart.png">
+            <span class="person-likenumber">{{person.likeNo}}人想见</span>
+            <span class="person-topic">话题</span>
+            <span class="person-price">{{person.price | currency }}/{{person.serviceTime}}小时</span>
+            <span class="person-theme">
+                <ul>
+                    <li><img src="http://image.1yingli.cn/img/undefined_01.png" ng-class="{'mainthme': person.tipsArray[1]=='1'}"><P>留学领航</P></li>
+                    <li><img src="http://image.1yingli.cn/img/undefined_02.png" ng-class="{'mainthme': person.tipsArray[2]=='2'}"><P>求职就业</P></li>
+                    <li><img src="http://image.1yingli.cn/img/undefined_03.png" ng-class="{'mainthme': person.tipsArray[3]=='3'}"><P>创业助力</P></li>
+                    <li><img src="http://image.1yingli.cn/img/undefined_04.png" ng-class="{'mainthme': person.tipsArray[4]=='4'}"><P>校园生活</P></li>
+                    <li><img src="http://image.1yingli.cn/img/undefined_05.png" ng-class="{'mainthme': person.tipsArray[5]=='5'}"><P>猎奇分享</P></li>
+                </ul>
+            </span>
+        </div>
+        <div class="left-topic" ng-bind-html="person.serviceContent | to_trusted"></div>
+        <div class="left-about">
+            <div class="left-about-topic">关于Ta</div>
+            <div class="left-about-content">{{person.introduce}}</div>
+        </div>
+        <div class="left-experience">
+            <div class="left-experience-topic">个人履历</div>
+            <div class="left-experience-content">
+                <ul>
+                    <li ng-repeat="studyEx in person.studyExperience">
+                        <span class="experience-detail">{{studyEx.schoolName  + "&nbsp;&nbsp;" + studyEx.major  + "&nbsp;&nbsp;" + studyEx.degree}}</span>
+                        <span class="experience-date">{{studyEx.startTime + "-" + studyEx.endTime}}</span>
+                    </li>
+                    <li ng-repeat="workEx in person.workExperience">
+                        <span class="experience-detail">{{workEx.companyName + "&nbsp;&nbsp;" + workEx.position}}</span>
+                        <span class="experience-date">{{workEx.startTime+ "-" +workEx.endTime}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="left-comment">
+            <div class="left-comment-topic">{{person.commentNo}}条评论</div>
+            <div class="left-comment-content">
+                <div class="comment-block" ng-repeat="comment in comments">
+                    <div class="comment-block-header">
+                        <img class="comment-person-img" ng-src="{{comment.iconUrl?comment.iconUrl:'http://image.1yingli.cn/img/img.png'}}">
+                        <span>{{comment.nickName}}</span>
+                        <span>{{comment.createTime}}</span>
+                        <img class="comment—star" src="http://image.1yingli.cn/img/light_star_for_tutor_assess.png" ng-repeat="sc in score">
+                    </div>
+                    <div class="comment-block-content">{{comment.content}}</div>
+                    <div class="comment-block-topic">参与话题“{{comment.serviceTitle}}”</div>
+                </div>
+            </	>
+            <div class="page">
+                <img src="../images/page_person.png" ng-click="pages(1);"/>
+                <div class="page-block" ng-repeat="page in pagesArray">
+                    <!--<label ng-if="($index + 1 == 2 &amp;&amp; page - 1 &gt; 3) || ($index + 1 == totalPage - 1 &amp;&amp; totalPage - page &gt; 3)" >......</label>-->
+                    <label ng-if="$index == 0 || $index == page -1 || ((page - $index - 1)&lt;3 &amp;&amp; (page - $index - 1) &gt; -3)">{{page}}</label>
+                </div>
+                <img src="http://image.1yingli.cn/img/nextPageBlue.png" ng-click="pages(page+1);"/>
+                <label ng-click="pages(totalPage)">英里</label>
+            </div>
+        </div>
+    </div>
+    <div class="contrain-right">
+        <div class="right-orderinfo">
+            <ul>
+                <li>
+                    <img src="http://image.1yingli.cn/img/contact_her_icon.png">
+                    <label>咨询方式:</label>
+                    <img class="contract-way" src="http://image.1yingli.cn/images/tel11.png">
+                    <img class="contract-way" src="http://image.1yingli.cn/images/tel22.png">
+                    <img class="contract-way" src="http://image.1yingli.cn/images/tel33.png">
+                </li>
+                <li>
+                    <img src="http://image.1yingli.cn/img/address_icon.png">
+                    <label>常驻地区：{{person.address}}</label>
+                </li>
+                <li>
+                    <img src="http://image.1yingli.cn/img/add_like_success.png">
+                    <label>本周可预约次数：{{person.timeperweek}}次</label>
+                </li>
+                <li>
+                    <p class="order-ta">预约Ta</p>
+                </li>
+                <li>
+                    <p class="like-ta">
+                        <img src="http://image.1yingli.cn/img/contact_gray_heart.png">
+                        <span>加入心愿名单</span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="right-aboutperson">
+            <div class="aboutperson-topic">相关话题</div>
+            <div class="aboutperson-block" ng-repeat="person in persons">
+                <a href="#/{{person.teacherId}}">
+                <img class="aboutperson-block-img"ng-src="{{person.url}}">
+                <label class="aboutperson-block-name">{{person.name}}</label>
+                <label class="aboutperson-block-topic">{{person.topic}}</label>
+                <label class="aboutperson-block-simpleinfo">{{person.simpleInfo}} CEO</label>
+                <label class="aboutperson-block-likeno"><img src="http://image.1yingli.cn/img/kelly.png"><span>{{person.likenumber}}人想见</span></label>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

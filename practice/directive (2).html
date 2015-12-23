@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" >
+<title>AngularJS使用示例</title>
+<script src="js/angular.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script>
+var directiveApp = angular.module('directiveApp', []);
+directiveApp.directive('mymessage', [function () {
+    return {
+        restrict: 'E',
+        template: '<div><mymessage>元素体。请选择年。</div>'
+    };
+}]);
+directiveApp.controller('directiveCtrl', ['$scope', function ($scope) {
+    $scope.years = [2010, 2011, 2012, 2013, 2014, 2015];
+    $scope.selecter = 2014;
+}]);
+
+</script>
+</head>
+<body ng-app="directiveApp">
+    <div class="container">
+        <div class="jumbotron">
+            <h2>指令示例!</h2>
+        </div>
+        <div ng-controller="directiveCtrl">
+            <header></header>
+            <mymessage></mymessage>
+            <select ng-model="selecter" ng-options="year for year in years"></select>
+            <div footer></div>
+        </div>
+    </div>
+</body>
+</html>

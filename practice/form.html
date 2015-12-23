@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>表单验证</title>
+    <script src="js/angular.js"></script>
+    <style>
+        label{
+            width:80px;
+            text-align:left;
+            float: left;
+        }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form action="" >
+        <p>
+          <label>text：</label>
+          <input name="name" >
+        </p>
+        <p>
+          <label>email：</label>
+          <input name="email" type="email" multiple>
+        </p>
+        <p>
+          <label>passowrd：</label>
+          <input name="password" type="password" autofocus pattern="[A-z]{3}" title="必须填写三个字符" required>
+        </p>
+        <p>
+          <label>numebr：</label>
+          <input name="number" type="number" min="1" max="10">
+        </p>
+        <p>
+          <label>url：</label>
+          <input name="url" type="url" list="url_list">
+            <datalist id="url_list">
+                <option label="W3School" value="http://www.w3school.com.cn" />
+                <option label="Google" value="http://www.google.com" />
+                <option label="Microsoft" value="http://www.microsoft.com" />
+            </datalist>
+        </p>
+        <p>
+          <label>date：</label>
+          <input name="date">
+        </p>
+        <p>
+          <label>range:</label>
+          <input type="range" min="1" max="9">
+        </p>
+        <p>
+          <input type="submit">
+        </p>
+      </form>
+    </div>
+  </body>
+</html>

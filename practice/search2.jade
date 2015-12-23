@@ -1,0 +1,78 @@
+html(lang='en')
+    head
+        meta(charset="utf-8")
+        title 一英里_留学_搜索
+        link(rel='stylesheet', href='css/search.css')
+        script(src="js/angular.js")
+        script(src="js/jquery.js")
+        script(src="js/search.js")
+    body(ng-app="searchApp")
+        .container(ng-controller="searchCon")
+            .header
+                .left
+                    .logo
+                        img(alt="图片出错啦" src="http://image.1yingli.cn/img/logo_white.png")
+                    .search
+                        input(placeholder="搜索：学校 / 专业 / 导师" ng-model="searchKey" ng-keyup="searchTeacher(1);")
+                        img(src="http://image.1yingli.cn/img/search_white.png")
+                .right
+                    ul.userStatus
+                        li.teacherTo 成为导师
+                        li.userLogin  晓乐&feng
+                        li.themeChoose 主题分类
+            .content
+                .content_top
+                    .theme_choose
+                        ul
+                            li 全部
+                            li 留学领航
+                            li 求职就业
+                            li 创业助力
+                            li 校园生活
+                            li 猎奇分享
+                    .tip_choose
+                        .tips_for_choose
+                            img(src="http://image.1yingli.cn/img/good.png")
+                            label 特色标签
+                            select
+                                option 请选择
+                            select
+                                option 请选择
+                            select
+                                option 请选择
+                            select
+                                option 请选择
+                        .tips_choosed
+                            img(src="http://image.1yingli.cn/img/choose.png")
+                            label 已选标枪
+                .content_main
+                    .main_search_sort
+                        ul
+                            li 综合
+                            li 喜爱
+                            li 价格
+                            li
+                                input(placeholder="搜索：学校 / 专业 / 导师" ng-model="searchKey" ng-keyup="searchTeacher(1);")
+                                img(src="http://image.1yingli.cn/img/search_icon.png")
+                    .main_block(ng-repeat="person in persons")
+                        .one_block
+                            .block_left
+                                img(ng-src="{{person.iconurl}}")
+                            .block_middle
+                                p(ng-bind-html="person.servicetitle | to_trusted")
+                                p
+                                    label(ng-bind="person.name")
+                                    label(ng-bind-html="person.simpleinfo | to_trusted")
+                                p(ng-bind-html="person.introduce | to_trusted")
+                            .block_right
+                                p(ng-if="person.serviceprice.length>0") {{person.serviceprice}}/1小时
+                                p
+                                    img(src="http://image.1yingli.cn/img/heart.png")
+                                    label {{person.likeno}}人想见
+                                p 本周可咨询{{person.timeperweek}}次
+                    .page(ng-show="totalPage >= 1")
+                        img(src="images/page_person.png" ng-click="loadPage(1);")
+                        label(ng-repeat="page in pages" ng-class="{'pageNow':currentPage==page,'pageOverplus':'......'==page}" ng-bind="page" ng-click="loadPage(page)")
+                        img(src="http://image.1yingli.cn/img/nextPageBlue.png" ng-click="next();")
+                        label 英里
+            .footer

@@ -1,0 +1,101 @@
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>一英里_留学_搜索</title>
+    <link rel="stylesheet" href="css/search.css"/>
+    <script src="js/angular.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/search.js"></script>
+  </head>
+  <body ng-app="searchApp">
+    <div ng-controller="searchCon" class="container">
+      <div class="header">
+        <div class="left">
+          <div class="logo"><img alt="图片出错啦" src="http://image.1yingli.cn/img/logo_white.png"/></div>
+          <div class="search">
+            <input placeholder="搜索：学校 / 专业 / 导师" ng-model="searchKey" ng-keyup="searchTeacher(1);"/><img src="http://image.1yingli.cn/img/search_white.png"/>
+          </div>
+        </div>
+        <div class="right">
+          <ul class="userStatus">
+            <li class="teacherTo">成为导师</li>
+            <li class="userLogin"> 晓乐&feng</li>
+            <li class="themeChoose">主题分类</li>
+          </ul>
+        </div>
+      </div>
+      <div class="content">
+        <div class="content_top">
+          <div class="theme_choose">
+            <ul>
+              <li>全部</li>
+              <li>留学领航</li>
+              <li>求职就业</li>
+              <li>创业助力</li>
+              <li>校园生活</li>
+              <li>猎奇分享</li>
+            </ul>
+          </div>
+          <div class="tip_choose">
+            <div class="tips_for_choose"><img src="http://image.1yingli.cn/img/good.png"/>
+              <label>特色标签</label>
+              <select>
+                <option>请选择</option>
+              </select>
+              <select>
+                <option>请选择</option>
+              </select>
+              <select>
+                <option>请选择</option>
+              </select>
+              <select>
+                <option>请选择</option>
+              </select>
+            </div>
+            <div class="tips_choosed"><img src="http://image.1yingli.cn/img/choose.png"/>
+              <label>已选标枪</label>
+            </div>
+          </div>
+        </div>
+        <div class="content_main">
+          <div class="main_search_sort">
+            <ul>
+              <li>综合</li>
+              <li>喜爱</li>
+              <li>价格</li>
+              <li>
+                <input placeholder="搜索：学校 / 专业 / 导师" ng-model="searchKey" ng-keyup="searchTeacher(1);"/><img src="http://image.1yingli.cn/img/search_icon.png"/>
+              </li>
+            </ul>
+          </div>
+          <div ng-repeat="person in persons" class="main_block">
+            <div class="one_block">
+              <div class="block_left"><img ng-src="{{person.iconurl}}"/></div>
+              <div class="block_middle">
+                <p ng-bind-html="person.servicetitle | to_trusted"></p>
+                <p>
+                  <label ng-bind="person.name"></label>
+                  <label ng-bind-html="person.simpleinfo | to_trusted"></label>
+                </p>
+                <p ng-bind-html="person.introduce | to_trusted"></p>
+              </div>
+              <div class="block_right">
+                <p ng-if="person.serviceprice.length&gt;0">{{person.serviceprice}}/1小时</p>
+                <p><img src="http://image.1yingli.cn/img/heart.png"/>
+                  <label>{{person.likeno}}人想见</label>
+                </p>
+                <p>本周可咨询{{person.timeperweek}}次</p>
+              </div>
+            </div>
+          </div>
+          <div ng-show="totalPage &gt;= 1" class="page"><img src="images/page_person.png" ng-click="loadPage(1);"/>
+            <label ng-repeat="page in pages" ng-class="{'pageNow':currentPage==page,'pageOverplus':'......'==page}" ng-bind="page" ng-click="loadPage(page)"></label><img src="http://image.1yingli.cn/img/nextPageBlue.png" ng-click="next();"/>
+            <label>英里</label>
+          </div>
+        </div>
+      </div>
+      <div class="footer"></div>
+    </div>
+  </body>
+</html>

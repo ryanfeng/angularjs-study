@@ -1,0 +1,33 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title 表单验证
+        script(src="js/angular.js")
+        style
+    body
+        div
+           form(action="")
+               p
+                    label text：
+                    input(name="name" )
+               p
+                    label email：
+                    input(name="email" type="email")
+               p
+                    label passowrd：
+                    input(name="password" type="password")
+               p
+                    label numebr：
+                    input(name="number" type="number" min=1 max=10)
+               p
+                    label url：
+                    input(name="url" type="url")
+               p
+                    label date：
+                    input(name="date")
+               p
+                    label range:
+                    input(type="range" min=1 max=9)
+               p
+                    input(type="submit")

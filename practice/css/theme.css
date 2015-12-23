@@ -1,0 +1,219 @@
+@media (min-width: 768px){
+	.container {
+		width: 950px;
+	}
+	.navbar-right {
+    	margin-top: 6px;
+	}
+	#navbar {
+		display: none!important;
+	}
+	#navbarLogo {
+		display: none!important;
+	}
+	.footer_up{
+		width:906px !important;
+	}
+}
+@media (max-width: 768px){
+	.navbar-static-top {
+		height: 50px !important;
+	}
+	.row {
+		padding:0px 10px;
+		margin-top: 5px;
+	}
+	.navbar {
+    	margin-bottom: 10px;
+		
+	}
+	
+	.navbar-header{
+	    text-align: center;
+		min-Width: 330px;
+		
+	}
+	
+	#search-box {
+		width: 50% !important;
+		max-width: 250px;
+		min-width: 206px;
+		height: 30px;
+		background-color: #FFF;
+		border-radius: 50px;
+		float: none !important;
+		display: inline-block;
+		vertical-align: middle;
+		margin-top: 10px;
+	}
+	
+	.navbar-header input{
+		width: 75% !important;
+		margin-top: 0px !important;
+		border: 0px solid rgba(0,0,0,0.3) !important;
+		border-radius: 50px !important;
+	}
+	
+	#search-img {
+	    margin-top: 0px !important;
+		width: 30px !important;
+		float: right !important;
+		border-radius: 33px !important;
+		height: 30px !important;
+		background-color: #4FBAE9 !important;
+		background-image: url(../images/header_min_search.png) !important;
+		background-repeat: no-repeat !important;
+		background-size: 22px, 22px !important;
+		background-position: 7px !important;
+	}
+	
+	#header_menu {
+		margin-top: 8px;
+		float:left;
+		margin-left: 3px;
+		margin-right: 5px;
+		border: 0px solid transparent;
+		    position: absolute;
+    left: 0px;
+    top: 0px;
+	}
+	
+	#header_person {
+		border: 0px solid transparent;
+		background-image:url(../images/person.png);
+		width: 22px;
+		height: 26px;
+		margin-top: 12px;
+		margin-left: 5px;
+		margin-right: 10px;
+		background-clip: border-box;
+		background-size:22px 26px;
+		float:right !important;
+		    position: absolute;
+    right: 5px;
+    top: 0px;
+	}
+	
+	#navbar {
+		display: auao!important;
+		width: 260px;
+    	height: 100% !important;
+	}
+	
+	#navbarLogo {
+		display: auao!important;
+	}
+	#footer {
+		padding-right: 0px;
+    	padding-left: 0px;
+	}
+	#footer p{
+		text-align: center;
+	}
+}	
+/*------------------------------------------------------header-----------------------------------------------------*/
+.row{
+	margin-top:20px;
+}
+.course-one {
+	width: 100%;
+    padding-bottom: 15px;
+    background: white;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    float: left;
+    border: 1px solid rgba(0,0,0,0.1);
+    -moz-transition: box-shadow 0.3s;
+    -webkit-transition: box-shadow 0.3s;
+    -o-transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s;
+    position: relative;
+}
+
+.result-content-results-top {
+	width: 100%;
+    overflow: hidden;
+	position: relative;
+}
+.face {
+    border-radius: 20px;
+	width: 100%;
+}
+.people-want {
+    min-width: 65px;
+    height: 21px;
+    line-height: 21px;
+    border-radius: 10px;
+    background: #56bbe8;
+    color: white;
+    font-size: 12px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Helvetica,sans-serif;
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    text-align: center;
+}
+.topic {
+    height: 40px;
+    line-height: 20px;
+    display: inline-block;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    color: black;
+    margin: 10px;
+    margin-top: 13px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    font-weight: bold;
+}
+.assess {
+    line-height: 13px;
+    margin-top: 0;
+    overflow: hidden;
+}
+.label {
+    height: 20px;
+    line-height: 20px;
+    color: #b6b6b6;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 15px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.assess-star {
+    height: 15px;
+    line-height: 13px;
+    float: left;
+    margin-top: 2px;
+}
+.home-company {
+    width: 275px;
+    height: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+.home-company img {
+    float: left;
+    width: 20px;
+    height: 15px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.home-company label {
+    float: left;
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+    margin-top: 6px;
+    color: #b6b6b6;
+    max-width: 245px;
+}

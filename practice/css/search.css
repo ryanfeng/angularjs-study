@@ -1,0 +1,322 @@
+
+body,div,p,ul{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Helvetica,sans-serif;
+}
+input,textarea{
+    outline: none;
+}
+em {
+    color: red;
+    font-weight: bold;
+    font-style: normal;
+}
+.container{
+    width: 100%;
+    min-width: 1096px;
+}
+.header{
+    width: 100%;
+    height: 60px;
+    background: #34495c;
+}
+.left{
+    width: 600px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.logo {
+    width: 120px;
+    float: left;
+}
+.search {
+    float: left;
+    width: 420px;
+}
+.search input{
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid rgba(0,0,0,0.3);
+    font-family: "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    float: left;
+    margin-top: 6px;
+    padding-left: 7px;
+    border-radius: 8px;
+}
+.search img {
+    margin-top: 4px;
+    cursor: pointer;
+}
+.right {
+    width: 370px;
+    float: right;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+.right ul{
+    overflow: hidden;
+    margin-top: 11px;
+}
+.right ul li{
+    width: 100px;
+    text-align: center;
+    float: right;
+    list-style: none;
+    color: #FFF;
+    font-family: "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+.content{
+    width: 100%;
+    min-width: 1096px;
+    background: #FFF;
+}
+.content_top{
+    width: 950px;
+    margin: 50px auto;
+}
+.theme_choose {
+    height: 50px;
+    border-bottom: 4px solid #EFEFEF;
+}
+.theme_choose ul{
+    overflow: hidden;
+    padding-left: 0px;
+}
+.theme_choose ul li {
+    list-style: none;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    font-size: 25px;
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, Helvetica, sans-serif;
+    color: rgba(0, 0, 0, 0.7);
+    width: 158px;
+    text-align: center;
+    cursor: pointer;
+}
+.theme_choose ul li:hover {
+    border-bottom: 4px solid #34495E;
+}
+.tip_choose {
+    width: 950px;
+    height: 110px;
+    background: #f8f8f8;
+    margin-top: 60px;
+}
+.tips_for_choose{
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    border-bottom: 1px solid #EEEFF0;
+}
+.tips_choosed{
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+}
+.tip_choose img{
+    margin-left: 10px;
+    float: left;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+.tip_choose label{
+    height: 50px;
+    line-height: 50px;
+    margin-right: 50px;
+    font-weight: bold;
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+.tip_choose select{
+    font-size: 13px;
+    height: 20px;
+    line-height: 23px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #56BBE8;
+    background: #F8F8F8;
+    margin-right: 20px;
+}
+.content_main{
+    width: 100%;
+    min-height: 300px;
+    background: #f8f8f8;
+}
+.main_search_sort{
+    width: 950px;
+    height: 60px;
+    margin: 0 auto;
+}
+.main_search_sort ul{
+    overflow: hidden;
+}
+.main_search_sort ul li{
+    list-style: none;
+    float: left;
+    margin: 15px 10px;
+    width: 56px;
+    border-radius: 10px;
+    border: 1px solid #56bbe8;
+    text-align: center;
+    height: 26px;
+    line-height: 26px;
+    color: #56bbe8;
+}
+.main_search_sort ul li:nth-of-type(1){
+    background: #56bbe8;
+    color: #FFF;
+}
+.main_search_sort ul li:nth-of-type(4) {
+    width: 296px;
+    background: #FFF;
+}
+.main_search_sort ul li:nth-of-type(4) input{
+    border: #FFFFFF;
+    font-size: 12px;
+    width: 260px;
+    height: 20px;
+    float: left;
+    margin: 3px 0px 0px 5px;
+    line-height: 20px;
+}
+.main_search_sort ul li:nth-of-type(4) img{
+    width: 25px;
+    float: left;
+    margin: 1px 0px 0px 2px;
+    cursor: pointer;
+}
+.main_block{
+    width: 950px;
+    min-height: 100px;
+    margin: 0 auto;
+}
+.one_block {
+    width: 100%;
+    height: 139px;
+    background: #FFFFFF;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.one_block:hover {
+    box-shadow: 0 0 5px #CCC;
+}
+.block_left {
+    width:16%;
+    height: 100%;
+    float: left;
+}
+.block_left img{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin-left: 10%;
+    margin-top: 7.5%;
+    width: 75%;
+}
+.block_middle {
+    width: 64%;
+    height: 100%;
+    float: left;
+}
+.block_middle p:nth-of-type(1){
+    margin-top: 10px;
+    font-size: 19px;
+    line-height: 40px;
+    font-weight: bold;
+    overflow: hidden;
+    height: 40px;
+}
+.block_middle p:nth-of-type(2){
+    font-size: 16px;
+    line-height: 35px;
+    padding-top: 2px;
+}
+.block_middle p:nth-of-type(2) label:nth-of-type(2){
+    color: #AFAFAF;
+    height: 25px;
+    font-size: 14px;
+}
+.block_middle p:nth-of-type(3){
+    font-size: 12px;
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: clip;
+}
+.block_right {
+    width: 18%;
+    float: right;
+    height: 100%;
+}
+.block_right p:nth-of-type(1){
+    font-size: 25px;
+    margin-top: 10px;
+    width: 100%;
+    overflow: hidden;
+    height: 30px;
+}
+.block_right p:nth-of-type(2){
+    line-height: 45px;
+    margin-top: 10px;
+}
+.block_right p:nth-of-type(2) img{
+    float: left;
+    margin-top: 13px;
+}
+
+.block_right p:nth-of-type(3){
+    font-size: 15px;
+    margin-top: 0px;
+}
+.page{
+    width: 950px;
+    height: 80px;
+    margin: 0 auto;
+}
+.page img, .page label{
+    float: left;
+    cursor: pointer;
+}
+.page label{
+    display: block;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #CCC;
+    float: left;
+    margin: 8px 6px 0 6px;
+    text-align: center;
+    color: #CCC;
+    cursor: pointer;
+}
+.page label:nth-last-of-type(1){
+    width: 50px;
+    border: 0px;
+    margin-left: 0px;
+    text-align: left;
+    margin-top: 10px;
+    color:#56BBE8;
+}
+.page img:nth-last-of-type(1){
+    margin-top:5px;
+    cursor: pointer;
+}
+.page .pageNow{
+    color:#56BBE8;
+}
+.page .pageOverplus{
+    border: 0px;
+    width: 30px;
+}
+.choose-tips{
+    border-bottom: 4px solid #34495E;
+}

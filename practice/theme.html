@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <title>留学领航</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/theme.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+</head>
+<body  ng-app="myApp" style="display: none" id="content-body">
+	<div id="navbar" class="navbar-collapse collapse">
+	  <ul class="nav navbar-nav navbar-right">
+		<li><a href="#">首页</a></li>
+		<li><a href="#">主题分类</a></li>
+		<li><a href="#">留学领航</a></li>
+		<li><a href="#">求职就业</a></li>
+		<li><a href="#">创业助力</a></li>
+		<li><a href="#">校园生活</a></li>
+		<li><a href="#">猎奇分享</a></li>
+	  </ul>
+    </div>
+
+	<div id="navbarLogo" class="navbar-collapse collapse" >
+	  <ul class="nav navbar-nav navbar-right">
+		<li><a href="login.html?callback=theme.html">登录</a></li>
+		<li><a href="login.html?kind=register">注册</a></li>
+		<li><a href="bct1.html">成为导师</a></li>
+	  </ul>
+	</div>
+    
+    <!----------------------------------头部---------------------------------------->
+	<nav class="navbar navbar-default navbar-static-top" style="background: #34495C;min-Width: 330px; height:60px;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" id="header_menu">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand hidden-xs" href="home.html"><img src='http://image.1yingli.cn/img/logo_white.png' class='logo' id='logo'/></a>
+		  <form id='search-box' method='get'> 
+		  	  <input type='text' id='search-input' placeholder='搜索：学校 / 专业 / 导师' /> 
+			  <div id='search-img'/></div> 
+		  </form>
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarLogo" id="header_person">
+            <span class="sr-only"></span>
+          </button>
+        </div>
+		<div class="navbar-collapse collapse" >
+          <ul class="nav navbar-nav navbar-right">
+            <li class="header_menu">
+				<a href="#">主题分类</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">留学领航</a></li>
+						<li><a href="#">求职就业</a></li>
+						<li><a href="#">创业助力</a></li>
+						<li><a href="#">校园生活</a></li>
+						<li><a href="#">猎奇分享</a></li>
+					</ul>
+			</li>
+			<li><a href="login.html?callback=theme.html">登录</a></li>
+            <li><a href="login.html?kind=register">注册</a></li>
+			<li><a href="bct1.html">成为导师</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	
+	<!------------------------------------------中间图片和内容---------------------------------------------------->
+	<div class="container"  style="padding-right: 0px;padding-left: 0px;min-Width: 330px;"  ng-controller="contrlTheme">
+      <img src="http://image.1yingli.cn/img/theme-content-img.jpg" class="img-responsive center-block" alt="Responsive image">
+	  <div class="row" id="row">
+			<div class="col-md-4 col-sm-4" ng-repeat="person in themes"  ng-mouseenter="showBorder()" ng-mouseleave="closeBorder()">
+				<div class="course-one">
+					<a href="personal.html?tid={{person.teacherId}}" target="_blank">
+					<div class="result-content-results-top"> 
+						<img ng-if="person.iconUrl.length>0" class="face img-responsive center-block" ng-src="{{person.iconUrl}}"> 
+						<p class="people-want">{{person.likeNo}}人想见</p> 
+					</div>
+						<p class="topic">{{person.serviceTitle}}</p>
+						<div class="assess">
+							<p class="label">{{content.name}}</p>
+							<img class="assess-star" src="http://image.1yingli.cn/img/yellow_star.png">
+							<img class="assess-star" src="http://image.1yingli.cn/img/yellow_star.png">
+							<img class="assess-star" src="http://image.1yingli.cn/img/yellow_star.png"> 
+							<img class="assess-star" src="http://image.1yingli.cn/img/yellow_star.png"> 
+							<img class="assess-star" src="http://image.1yingli.cn/img/yellow_star.png">
+							<p style="float:right;margin-right:20px;font-size:12px;margin-top: 5px;color: #b6b6b6;">本周可咨询{{person.timeperweek}}次</p> 
+						</div> 
+						<div class="home-company">	
+							<img src="http://image.1yingli.cn/img/home-company.png">
+							<label>{{person.simpleinfo}}</label>
+						</div> 
+					</a> 
+				</div>
+			</div>
+	  </div>
+	</div>
+
+	<iframe src="footer.html" frameborder="0" width="100%" height="333" scrolling="No" leftmargin="0" topmargin="0" bottommargin="0"></iframe>
+	
+	<script src="js/jquery.js"></script>
+	<script src="js/json.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/angular.js"></script>
+	<script>
+		$(".header_menu").hover(function(){
+			$(".dropdown-menu").css("display","block")
+		});
+		$(".header_menu").mouseleave(function(){
+			$(".dropdown-menu").css("display","none")
+		});
+		
+		var toSend = new Object();
+		toSend.style = "teacher";
+		toSend.method = "getTeacherSInfoList";
+		toSend.tip = "1";
+		/*$.ajax({
+				cache : true,
+				type : "POST",
+				url : "http://service.1yingli.cn/yiyingliService/manage",
+				data : $.toJSON(toSend),
+				async : false,
+				error : function(request) {
+						},
+				success : function(data) {
+					//console.log(data);
+					var json = eval("(" + data + ")");
+					if (json.state == "success") {
+						var app = angular.module('myApp', []);
+						app.controller('contrlTheme', function($scope, $http) {
+							$scope.themes = $.parseJSON(json.data);
+						});
+						// var tlist = $.parseJSON(json.data);
+						// var html = "";
+						// $.each(tlist,function(index,content){
+						// 	html = html + "<div class=\"col-md-4 col-sm-4\"><div class=\"course-one\"><a href=\"personal.html?tid="+content.teacherId+"\" target=\"_blank\"> <div class=\"result-content-results-top\"> <img class=\"face img-responsive center-block\" src="+content.iconUrl+" alt=\"Responsive image\"> <p class=\"people-want\">"+content.likeNo+"人想见</p> </div><p class=\"topic\">"+content.serviceTitle+"</p>  <div class=\"assess\"> <p class=\"label\">"+content.name+"</p><img class=\"assess-star\" src=\"http://image.1yingli.cn/img/yellow_star.png\"><img class=\"assess-star\" src=\"http://image.1yingli.cn/img/yellow_star.png\"><img class=\"assess-star\" src=\"http://image.1yingli.cn/img/yellow_star.png\"> <img class=\"assess-star\" src=\"http://image.1yingli.cn/img/yellow_star.png\"> <img class=\"assess-star\" src=\"http://image.1yingli.cn/img/yellow_star.png\"><p style=\"float:right;margin-right:20px;font-size:12px;margin-top: 5px;color: #b6b6b6;\">本周可咨询"+content.timeperweek+"次</p> </div> <div class=\"home-company\">	<img src=\"http://image.1yingli.cn/img/home-company.png\"><label>"+content.simpleinfo+"</label> </div> </a> </div></div>";					
+						// });
+						// $("#row").html(html);
+					}
+				}
+		});*/
+		
+	
+		var app = angular.module('myApp', []);
+		app.controller('contrlTheme', function($scope, $http) {
+			$http({
+				method:'POST',
+				url:'http://service.1yingli.cn/yiyingliService/manage',
+				data: $.toJSON(toSend),
+				headers:{
+					'Content-Type': 'application/x-www-form-urlencoded'
+				}
+			}).success(function(data, status, headers, config){				
+				var persons = data.data;
+				var state = data.state;
+				if (state == "success") {
+					$scope.themes = $.parseJSON(persons);
+				}
+			}).error(function() {
+			});
+
+			/*$scope.showBorder=function(){
+				this.find(".course-one").css("box-shadow", "0 0 5px #ccc;");
+			}
+			$scope.closeBorder=function(){
+				this.find(".course-one").css("box-shadow", "0 0 0px #ccc;");
+			}*/
+
+			// $http.post(
+			// 	'http://service.1yingli.cn/yiyingliService/manage',
+			// 	$.toJSON(toSend),
+			// 	{'Content-Type':'application/x-www-form-urlencoded'}
+			// ).success(function(data, status, headers, config){				
+			// 	var persons = data.data;
+			// 	var state = data.state;
+			// 	if (state == "success") {
+			// 		$scope.themes = $.parseJSON(persons);
+			// 	}
+			// }).error(function() {
+			// 	alert("报错啦")
+			// });
+		});
+
+		$("#content-body").show();
+	</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<meta charset="utf-8"/>
+	<title>angularjs 下拉框</title>
+	<script src="../angular.js"></script>
+	<script src="../jquery.js"></script>
+	<script src="app.js"></script>
+	<style type="text/css">
+		ul,li,div{
+			margin: 0;
+			padding: 0;
+		}
+		.m-select {
+			position: relative;
+		}
+		.u-select {
+			width: 100px;
+			border-right: 0;
+			cursor: pointer;
+			color: #647486;
+			position: relative;
+			cursor: pointer;
+			height: 35px;
+			font-size: 15px;
+		}
+		#select-country{
+			position: absolute;
+			width: 20px;
+			top: 7px;
+			left: 5px;
+		}
+		#phoneCode{
+			position: absolute;
+			top: 7px;
+			left: 25px;
+			width: 40px;
+			height: 20px;
+    		display: inline-block;
+    		text-align: center;
+		}
+		#select-sub{
+			width: 11px;
+			position: absolute;
+			top: 13px;
+    		left: 65px;
+		}
+		#select-splie{
+			position: absolute;
+		    top: 8px;
+		    left: 85px;
+		    display: block;
+		    height: 18px;
+		    border-right: 1px solid #bdc3c7;
+		}
+		.u-select-ul{
+			cursor: pointer;
+			background: #FFF;
+			overflow: hidden;
+			width: 85px;
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+			box-shadow:0 0 10px #bdc3c7;
+			position: absolute;
+			top: 35px;
+			padding: 0px;
+		}
+		.u-select-li{
+			list-style-type: none;
+			height: 23px;
+			margin-top: 3px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		.u-select-li:hover{
+			background: #eef3f5;
+		}
+		.select-country{
+			width: 20px;
+			height: 20px;
+			margin-left: 5px;
+			margin-right: 5px;
+			box-shadow: 0 0 4px rgba(0,0,0,0.1);
+		}
+		label{
+			cursor: pointer;
+			position: relative;
+			top: -7px;
+		}
+	</style>
+</head>
+<body>	
+	<select-block/>
+</body>
+</html>

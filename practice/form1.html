@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>表单验证</title>
+    <script src="js/angular.js"></script>
+    <script src="js/form.js"></script>
+    <style>
+        label{
+            width:80px;
+            text-align:left;
+            float: left;
+        }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form ng-app="myTest" ng-Controller="MyController" name="myform" novalidate >
+        <p>
+          <label>text：</label>
+          <input type="text" name="name" ng-model="user.name"  ng-pattern="/^[A-z]\w{3,12}$/" required autofocus>
+          <span ng-if="!myform.name.$valid">
+              <span ng-style="set_color(myform.name.$dirty)">字符串必须以字母开头，且3到12位长。</span>
+          </span>
+        </p>
+        <p>
+          <label>email：</label>
+          <input name="user.email" ng-model="user.email" type="email" >
+        </p>
+        <p>
+          <label>passowrd：</label>
+          <input name="user.password" ng-model="user.password" type="password" pattern="[A-z]{3}" title="必须填写三个字符" required>
+        </p>
+        <p>
+          <label>numebr：</label>
+          <input name="user.number" ng-model="user.number" type="number" min="1" max="10">
+        </p>
+        <p>
+          <label>url：</label>
+          <input name="user.url"  ng-model="user.url" type="url" list="url_list">
+            <datalist id="url_list">
+                <option label="W3School" value="http://www.w3school.com.cn" />
+                <option label="Google" value="http://www.google.com" />
+                <option label="Microsoft" value="http://www.microsoft.com" />
+            </datalist>
+        </p>
+        <p>
+          <label>date：</label>
+          <input name="user.date" ng-model="user.date">
+        </p>
+        <p>
+          <label>range:</label>
+          <input type="user.range" ng-model="user.range" min="1" max="9">
+        </p>
+        <p>
+          <input type="submit">
+        </p>
+      </form>
+    </div>
+
+   <!--<h2>Validation Example</h2>
+   <form ng-app="myApp" ng-controller="validateCtrl" name="myForm" novalidate>
+
+     <p>用户名:<br>
+        <input type="text" name="user" ng-model="user" required>
+        <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+            <span ng-show="myForm.user.$error.required">用户名是必须的。</span>
+        </span>
+        <span>{{myForm.user.$error.required}}</span>
+     </p>
+
+     <p>邮箱:<br>
+        <input type="email" name="email" ng-model="email" required>
+        <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+            <span ng-show="myForm.email.$error.required">邮箱是必须的。</span>
+            <span ng-show="myForm.email.$error.email">非法的邮箱地址。</span>
+        </span>
+     </p>
+
+     <p>
+       <input type="submit" > &lt;!&ndash;ng-disabled="myForm.user.$dirty && myForm.user.$invalid || myForm.email.$dirty && myForm.email.$invalid"&ndash;&gt;
+     </p>
+
+   </form>
+
+   <script>
+     var app = angular.module('myApp', []);
+     app.controller('validateCtrl', function($scope) {
+       $scope.user = 'John Doe';
+       $scope.email = 'john.doe@gmail.com';
+     });
+   </script>-->
+  </body>
+</html>

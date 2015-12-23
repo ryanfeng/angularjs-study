@@ -1,0 +1,356 @@
+body, div, ul, p{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #34495e;
+}
+body{
+    background: rgba(0, 0, 0, 0.05);
+}
+ul {
+    overflow: hidden;
+}
+ul li {
+    float: left;
+    list-style: none;
+}
+.person-background {
+    width: 100%;
+    min-width: 1096px;
+}
+.person-background img{
+    width: 100%;
+    max-height: 460px;
+}
+.contrain {
+    width: 1096px;
+    margin: 0 auto;
+}
+.contrain-left {
+    width: 790px;
+    min-height: 600px;
+    float: left;
+}
+.left-header {
+    width: 100%;
+    height: 230px;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.person-img{
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    margin-top: -20px;
+    border: 7px solid #fff;
+}
+.person-name {
+    position: absolute;
+    left: 210px;
+    font-size: 40px;
+    top: 10px;
+}
+.person-simpleinfo {
+    position: absolute;
+    left: 350px;
+    top: 30px;
+}
+.person-likeimg {
+    position: absolute;
+    left: 670px;
+    top: 32px;
+}
+.person-likenumber{
+    position: absolute;
+    left: 690px;
+    top: 30px;
+}
+.person-topic {
+    position: absolute;
+    left: 10px;
+    top: 190px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.person-price {
+    position: absolute;
+    left: 633px;
+    top: 190px;
+    font-weight: bold;
+}
+.person-theme{
+    position: absolute;
+    left: 220px;
+    top: 95px;
+}
+.person-theme ul li{
+    width: 100px;
+}
+.person-theme img{
+    background: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    margin-left: 10px;
+}
+.person-theme .mainthme{
+    background: rgb(86, 187, 232);
+}
+.left-topic {
+    width: 100%;
+    min-height:200px;
+    padding: 5px 10px 20px;
+    text-align: justify;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    line-height: 1.9;
+}
+.left-topic h1{
+    font-size: 23px;
+}
+.left-about {
+    width: 100%;
+    min-height:200px;
+    padding: 0px 10px 20px;
+    line-height: 1.9;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.left-about-topic{
+    height: 60px;
+    line-height: 60px;
+    font-weight: bold;
+    font-size: 22px;
+    color: rgba(0, 0, 0, 0.8);
+}
+.left-experience{
+    width: 100%;
+    min-height:100px;
+    padding: 0px 10px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.left-experience-topic{
+    height: 60px;
+    line-height: 60px;
+    font-weight: bold;
+    font-size: 22px;
+    color: rgba(0, 0, 0, 0.8);
+}
+.left-experience-content ul li{
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+}
+.experience-detail {
+    float: left;
+}
+.experience-date{
+    float: right;
+}
+.left-comment{
+    width: 100%;
+    min-height: 200px;
+    padding: 0px 10px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.left-comment-topic{
+    height: 60px;
+    line-height: 60px;
+    font-weight: bold;
+    font-size: 22px;
+    color: rgba(0, 0, 0, 0.8);
+}
+.comment-block{
+    width: 100%;
+    min-height: 50px;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+}
+.comment-block-header{
+    height: 60px;
+}
+.comment-person-img{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    float: left;
+}
+.comment-block-header span:nth-of-type(1){
+    float: left;
+    margin-left: 10px;
+    margin-top: 35px;
+}
+.comment-block-header span:nth-of-type(2){
+    float: left;
+    margin-left: 20px;
+    margin-top: 35px;
+}
+.comment—star{
+    float: right;
+    margin-top: 32px;
+}
+.comment-block-content{
+    margin-bottom: 25px;
+    line-height: 1.7;
+    text-align: justify;
+}
+.comment-block-topic{
+    margin-bottom: 10px;
+}
+.page{
+    width: 100%;
+    height: 70px;
+}
+.page div{
+    float: left;
+}
+.page img{
+    display: block;
+    float: left;
+    margin-top: 4px;
+    cursor: pointer;
+}
+.page label{
+    height: 39px;
+    line-height: 39px;
+    display: block;
+    float: left;
+    cursor: pointer;
+}
+.page-block label{
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.page-block label:hover{
+    color: #56bbe8;
+}
+.page-block .page-ellipsis{
+    width: 30px;
+    line-height: 30px;
+}
+.contrain-right {
+    width: 300px;
+    float: right;
+    min-height: 600px;
+}
+.right-orderinfo{
+    width: 250px;
+    margin: 0 auto;
+    float: right;
+    min-height: 100px;
+    background: #FFF;
+    padding: 30px 10px;
+}
+.right-orderinfo ul li{
+    width: 100%;
+    position: relative;
+    margin-top: 5px;
+}
+.right-orderinfo ul li img{
+    float: left;
+}
+.right-orderinfo ul li label{
+    float: left;
+    margin: 10px 5px 0px 5px;
+}
+.order-ta{
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    background: #56bbe8;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+}
+.like-ta{
+    width: 99%;
+    height: 23px;
+    line-height: 23px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.like-ta img{
+    position: absolute;
+    left: 58px;
+    top: 15px;
+    width: 20px;
+}
+.contract-way{
+    float: right;
+}
+.right-aboutperson{
+    width: 270px;
+    min-height: 100px;
+    float: right;
+}
+.aboutperson-topic{
+    height: 60px;
+    line-height: 60px;
+    text-align: left;
+}
+.aboutperson-block{
+    height: 110px;
+    width: 100%;
+    background: #FFF;
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.aboutperson-block:hover{
+    box-shadow: 0 0 5px #CCC;
+}
+.aboutperson-block-img{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: 60px;
+    border-radius: 50%;
+}
+.aboutperson-block-name{
+    text-align: center;
+    width: 60px;
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    color: #34495e;
+}
+.aboutperson-block-topic {
+    position: absolute;
+    top: 15px;
+    left: 90px;
+    font-size: 16px;
+    overflow: hidden;
+    height: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 180px;
+    color: #34495e;
+}
+.aboutperson-block-simpleinfo {
+    position: absolute;
+    top: 45px;
+    left: 90px;
+    color: #41B9EE;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 20px;
+    width: 158px;
+}
+.aboutperson-block-likeno{
+    float: right;
+    margin-top: 75px;
+    margin-right: 5px;
+    color: #34495e;
+}
+.aboutperson-block-likeno span{
+    float: right;
+    margin-top: 2px;
+}
+

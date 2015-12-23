@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+	<meta charset="utf-8">
+	<title>angularjs指令学习</title>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+	<hello-world>sssssssssss</hello-world>
+	<input type="text" ng-model="color" placeholder="Enter a color" />
+  	<hello/>
+
+	<script type="text/javascript">
+		var app = angular.module('myapp', []);
+
+		app.directive('helloWorld', function() {
+		  return {
+		      restrict: 'E',
+		      replace: false,
+		      template: '<h3>Hello World!!</h3>'
+		  };
+		});
+ 
+		app.directive('hello', function() {
+		  return {
+		    restrict: 'E',
+		    replace: false,
+		    template: '<p style="background-color:{{color}}">Hello World</p>',
+		    link: function(scope, elem, attrs) {
+		      elem.bind('click', function() {
+		        elem.css('background-color', 'white');
+		        scope.$apply(function() {
+		          scope.color = "white";
+		        });
+		      });
+		      elem.bind('mouseover', function() {
+		        elem.css('cursor', 'pointer');
+		      });
+		    }
+		  };
+		});
+	</script>
+</body>
+</html>
+
